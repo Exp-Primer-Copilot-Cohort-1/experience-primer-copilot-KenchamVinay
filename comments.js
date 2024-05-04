@@ -1,70 +1,81 @@
 //create a web server
-const express = require('express');
-const app = express();
+var express = require('express');
+var app = express();
+//create a path to the comments file
+var comments = require('./comments');
 
-//use a middleware to serve static files
-app.use(express.static('public'));
-
-//use a middleware to parse the body of the request
-app.use(express.json());
-
-//use a middleware to parse the body of the request
-app.use(express.urlencoded({ extended: true }));
-
-//create an array of comments
-let comments = [
-    'This is my first comment!',
-    'This is my second comment!',
-    'This is my third comment!',
-    'This is my fourth comment!',
-    'This is my fifth comment!',
-    'This is my sixth comment!',
-    'This is my seventh comment!',
-    'This is my eighth comment!',
-    'This is my ninth comment!',
-    'This is my tenth comment!',
-];
-
-//create a route to get all comments
-app.get('/comments', (req, res) => {
-    res.json(comments);
+//set up the server to listen for requests
+app.listen(3000, function() {
+    console.log('Server listening on port 3000');
 });
 
-//create a route to get a specific comment
-app.get('/comments/:index', (req, res) => {
-    let index = req.params.index;
-    res.json(comments[index]);
+//set up a route for comments
+app.get('/comments', function(req, res) {
+    res.send(comments);
 });
 
-//create a route to add a comment
-app.post('/comments', (req, res) => {
-    let comment = req.body.comment;
-    comments.push(comment);
-    res.json('Comment added');
+//set up a route for comments
+app.get('/comments/:id', function(req, res) {
+    var id = req.params.id;
+    var comment = comments[id];
+    if (comment) {
+        res.send(comment);
+    } else {
+        res.status(404).send('Comment not found');
+    }
 });
 
-//create a route to update a comment
-app.put('/comments/:index', (req, res) => {
-    let index = req.params.index;
-    let comment = req.body.comment;
-    comments[index] = comment;
-    res.json('Comment updated');
+//set up a route for comments
+app.get('/comments/:id', function(req, res) {
+    var id = req.params.id;
+    var comment = comments[id];
+    if (comment) {
+        res.send(comment);
+    } else {
+        res.status(404).send('Comment not found');
+    }
 });
 
-//create a route to delete a comment
-app.delete('/comments/:index', (req, res) => {
-    let index = req.params.index;
-    comments.splice(index, 1);
-    res.json('Comment deleted');
+//set up a route for comments
+app.get('/comments/:id', function(req, res) {
+    var id = req.params.id;
+    var comment = comments[id];
+    if (comment) {
+        res.send(comment);
+    } else {
+        res.status(404).send('Comment not found');
+    }
 });
 
-//create a route to delete all comments
-app.delete('/comments', (req, res) => {
-    comments = [];
-    res.json('All comments deleted');
+//set up a route for comments
+app.get('/comments/:id', function(req, res) {
+    var id = req.params.id;
+    var comment = comments[id];
+    if (comment) {
+        res.send(comment);
+    } else {
+        res.status(404).send('Comment not found');
+    }
 });
 
-//start the server
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+//set up a route for comments
+app.get('/comments/:id', function(req, res) {
+    var id = req.params.id;
+    var comment = comments[id];
+    if (comment) {
+        res.send(comment);
+    } else {
+        res.status(404).send('Comment not found');
+    }
+});
+
+//set up a route for comments
+app.get('/comments/:id', function(req, res) {
+    var id = req.params.id;
+    var comment = comments[id];
+    if (comment) {
+        res.send(comment);
+    } else {
+        res.status(404).send('Comment not found');
+    }
 });
