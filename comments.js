@@ -1,81 +1,22 @@
-//create a web server
-var express = require('express');
-var app = express();
-//create a path to the comments file
-var comments = require('./comments');
+// Create web server
+// Use express
+// Use body-parser
+// Use morgan
+// Use mongoose
+// Use express-handlebars
+// Use method-override
+// Use express-session
+// Use connect-flash
+// Use passport
+// Use passport-local
+// Use passport-local-mongoose
+// Use bcrypt-nodejs
+// Use express-validator
+// Use connect-mongo
+// Use express-messages
+// Use express-validator
 
-//set up the server to listen for requests
-app.listen(3000, function() {
-    console.log('Server listening on port 3000');
-});
 
-//set up a route for comments
-app.get('/comments', function(req, res) {
-    res.send(comments);
-});
 
-//set up a route for comments
-app.get('/comments/:id', function(req, res) {
-    var id = req.params.id;
-    var comment = comments[id];
-    if (comment) {
-        res.send(comment);
-    } else {
-        res.status(404).send('Comment not found');
-    }
-});
 
-//set up a route for comments
-app.get('/comments/:id', function(req, res) {
-    var id = req.params.id;
-    var comment = comments[id];
-    if (comment) {
-        res.send(comment);
-    } else {
-        res.status(404).send('Comment not found');
-    }
-});
 
-//set up a route for comments
-app.get('/comments/:id', function(req, res) {
-    var id = req.params.id;
-    var comment = comments[id];
-    if (comment) {
-        res.send(comment);
-    } else {
-        res.status(404).send('Comment not found');
-    }
-});
-
-//set up a route for comments
-app.get('/comments/:id', function(req, res) {
-    var id = req.params.id;
-    var comment = comments[id];
-    if (comment) {
-        res.send(comment);
-    } else {
-        res.status(404).send('Comment not found');
-    }
-});
-
-//set up a route for comments
-app.get('/comments/:id', function(req, res) {
-    var id = req.params.id;
-    var comment = comments[id];
-    if (comment) {
-        res.send(comment);
-    } else {
-        res.status(404).send('Comment not found');
-    }
-});
-
-//set up a route for comments
-app.get('/comments/:id', function(req, res) {
-    var id = req.params.id;
-    var comment = comments[id];
-    if (comment) {
-        res.send(comment);
-    } else {
-        res.status(404).send('Comment not found');
-    }
-});
